@@ -13,6 +13,7 @@ const MemberSign = ({navigation}) => {
   const handleSubmit = () => {
     if (!userName || !userLastName || !userAge || !userEMail || !userCountry) {
       Alert.alert('Sign Up', 'Bilgiler boş bırakılamaz!');
+      return;
     }
 
     const user = {
@@ -23,7 +24,7 @@ const MemberSign = ({navigation}) => {
       userCountry,
     };
 
-    navigation.navigate();
+    navigation.navigate('MemberResultScreen', {user});
   };
 
   return (
